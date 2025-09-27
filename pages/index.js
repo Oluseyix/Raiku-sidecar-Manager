@@ -388,54 +388,54 @@ export default function Home() {
       <div className="min-h-screen bg-black text-white transition-all duration-500">
         {/* HEADER */}
         <header className="bg-black backdrop-blur-xl border-b border-[#accf4c]/20 sticky top-0 z-50">
-          <div className="max-w-7xl mx-auto px-6 py-4">
-            <div className="flex justify-between items-center">
-              <div className="flex items-center space-x-4">
-                <div className="w-14 h-14 bg-black rounded-xl flex items-center justify-center shadow-lg shadow-[#accf4c]/30 border border-[#accf4c]/20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-3 sm:space-y-0">
+              <div className="flex items-center space-x-3 sm:space-x-4">
+                <div className="w-10 h-10 sm:w-14 sm:h-14 bg-black rounded-xl flex items-center justify-center shadow-lg shadow-[#accf4c]/30 border border-[#accf4c]/20">
                   <img 
                     src="/raiku.jpg" 
                     alt="Raiku Logo" 
-                    className="w-12 h-12 object-contain"
+                    className="w-8 h-8 sm:w-12 sm:h-12 object-contain"
                   />
                 </div>
                 <div>
-                  <h1 className="text-3xl font-bold text-[#accf4c]">Raiku Sidecar Manager</h1>
-                  <p className="text-sm text-gray-400">Multi-Validator Platform</p>
+                  <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#accf4c]">Raiku Sidecar Manager</h1>
+                  <p className="text-xs sm:text-sm text-gray-400">Multi-Validator Platform</p>
                 </div>
               </div>
-              <div className="flex items-center space-x-4">
+              <div className="flex items-center space-x-3 sm:space-x-4 w-full sm:w-auto justify-between sm:justify-end">
                 <div className="flex items-center space-x-2">
-                  <div className="w-3 h-3 rounded-full bg-[#accf4c] animate-pulse shadow-lg shadow-[#accf4c]/50"></div>
-                  <span className="text-sm font-medium text-gray-300">Online</span>
+                  <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-[#accf4c] animate-pulse shadow-lg shadow-[#accf4c]/50"></div>
+                  <span className="text-xs sm:text-sm font-medium text-gray-300">Online</span>
                 </div>
                 <a 
                   href="/community" 
-                  className="px-3 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium"
+                  className="px-2 py-1 sm:px-3 sm:py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-xs sm:text-sm font-medium"
                 >
-                  Community Portal
+                  Community
                 </a>
               </div>
             </div>
           </div>
         </header>
 
-        <main className="max-w-7xl mx-auto px-6 py-8">
+        <main className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
           {/* VALIDATOR SELECTOR */}
-          <div className="bg-black/80 backdrop-blur-xl rounded-2xl p-6 border border-[#accf4c]/20 hover:shadow-2xl hover:shadow-[#accf4c]/20 transition-all duration-300 hover:border-[#accf4c]/40 mb-8">
-            <div className="flex items-center justify-between">
-              <div>
-                <h2 className="text-xl font-semibold text-white mb-2">Active Validator</h2>
-                <p className="text-sm text-gray-400">Select validator to monitor and manage</p>
+          <div className="bg-black/80 backdrop-blur-xl rounded-2xl p-4 sm:p-6 border border-[#accf4c]/20 hover:shadow-2xl hover:shadow-[#accf4c]/20 transition-all duration-300 hover:border-[#accf4c]/40 mb-6 sm:mb-8">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between space-y-4 sm:space-y-0">
+              <div className="w-full sm:w-auto">
+                <h2 className="text-lg sm:text-xl font-semibold text-white mb-2">Active Validator</h2>
+                <p className="text-xs sm:text-sm text-gray-400">Select validator to monitor and manage</p>
               </div>
-              <div className="flex items-center space-x-4">
-                <div className="text-right">
-                  <div className="text-sm text-gray-400">Current Validator</div>
-                  <div className="text-lg font-semibold text-[#accf4c]">{currentValidator.name}</div>
+              <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 w-full sm:w-auto">
+                <div className="text-left sm:text-right w-full sm:w-auto">
+                  <div className="text-xs sm:text-sm text-gray-400">Current Validator</div>
+                  <div className="text-base sm:text-lg font-semibold text-[#accf4c] truncate">{currentValidator.name}</div>
                 </div>
                 <select 
                   value={selectedValidator} 
                   onChange={(e) => setSelectedValidator(Number(e.target.value))}
-                  className="bg-gray-800 border border-[#accf4c]/30 rounded-lg px-4 py-2 text-white focus:border-[#accf4c] focus:outline-none min-w-[200px]"
+                  className="bg-gray-800 border border-[#accf4c]/30 rounded-lg px-3 sm:px-4 py-2 text-white focus:border-[#accf4c] focus:outline-none w-full sm:min-w-[200px] text-sm"
                 >
                   {validators.map((validator) => (
                     <option key={validator.id} value={validator.id}>
@@ -448,39 +448,39 @@ export default function Home() {
           </div>
 
           {/* MAIN STATUS & CONTROLS */}
-          <div className="mb-8">
-            <div className="bg-black/80 backdrop-blur-xl rounded-3xl p-8 border border-[#accf4c]/20 shadow-2xl shadow-[#accf4c]/10">
-              <div className="flex flex-wrap items-center justify-between gap-6">
-                <div className="flex items-center space-x-8">
+          <div className="mb-6 sm:mb-8">
+            <div className="bg-black/80 backdrop-blur-xl rounded-3xl p-4 sm:p-6 lg:p-8 border border-[#accf4c]/20 shadow-2xl shadow-[#accf4c]/10">
+              <div className="flex flex-col space-y-6">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-[#accf4c]">{formatUptime(uptime)}</div>
-                    <div className="text-sm text-gray-400">Uptime</div>
+                    <div className="text-2xl sm:text-3xl font-bold text-[#accf4c]">{formatUptime(uptime)}</div>
+                    <div className="text-xs sm:text-sm text-gray-400">Uptime</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-[#accf4c]">{revenue.toFixed(3)} SOL</div>
-                    <div className="text-sm text-gray-400">Total Revenue</div>
+                    <div className="text-2xl sm:text-3xl font-bold text-[#accf4c]">{revenue.toFixed(3)} SOL</div>
+                    <div className="text-xs sm:text-sm text-gray-400">Total Revenue</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-[#accf4c]">{formatNumber(stake)}</div>
-                    <div className="text-sm text-gray-400">Total Stake</div>
+                    <div className="text-2xl sm:text-3xl font-bold text-[#accf4c]">{formatNumber(stake)}</div>
+                    <div className="text-xs sm:text-sm text-gray-400">Total Stake</div>
                   </div>
                 </div>
-                <div className="flex space-x-4">
+                <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 sm:justify-center">
                   <button 
                     onClick={() => toggleStatus("start")}
-                    className="px-8 py-4 rounded-2xl font-bold transition-all transform hover:scale-105 bg-[#accf4c] hover:bg-[#8bc34a] text-black shadow-lg shadow-[#accf4c]/30 hover:shadow-xl"
+                    className="px-6 py-3 sm:px-8 sm:py-4 rounded-2xl font-bold transition-all transform hover:scale-105 bg-[#accf4c] hover:bg-[#8bc34a] text-black shadow-lg shadow-[#accf4c]/30 hover:shadow-xl text-sm sm:text-base"
                   >
                     Start
                   </button>
                   <button 
                     onClick={() => toggleStatus("stop")}
-                    className="px-8 py-4 rounded-2xl font-bold transition-all transform hover:scale-105 bg-red-600 hover:bg-red-700 text-white shadow-lg shadow-red-600/30 hover:shadow-xl"
+                    className="px-6 py-3 sm:px-8 sm:py-4 rounded-2xl font-bold transition-all transform hover:scale-105 bg-red-600 hover:bg-red-700 text-white shadow-lg shadow-red-600/30 hover:shadow-xl text-sm sm:text-base"
                   >
                     Stop
                   </button>
                   <button 
                     onClick={() => toggleStatus("restart")}
-                    className="px-8 py-4 rounded-2xl font-bold transition-all transform hover:scale-105 bg-yellow-500 hover:bg-yellow-400 text-black shadow-lg shadow-yellow-500/30 hover:shadow-xl"
+                    className="px-6 py-3 sm:px-8 sm:py-4 rounded-2xl font-bold transition-all transform hover:scale-105 bg-yellow-500 hover:bg-yellow-400 text-black shadow-lg shadow-yellow-500/30 hover:shadow-xl text-sm sm:text-base"
                   >
                     Restart
                   </button>
@@ -490,7 +490,7 @@ export default function Home() {
           </div>
 
           {/* CORE METRICS - Must Haves */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4 mb-8">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4 mb-6 sm:mb-8">
             {/* Total Stake */}
             <div className="bg-black/80 backdrop-blur-xl rounded-2xl p-4 border border-[#accf4c]/20 hover:shadow-2xl hover:shadow-[#accf4c]/20 transition-all duration-300 hover:border-[#accf4c]/40">
               <div className="flex items-center justify-between mb-2">
@@ -547,157 +547,157 @@ export default function Home() {
           </div>
 
           {/* CHARTS - Core Metrics */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 mb-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
             {/* Revenue Over Time */}
-            <div className="bg-black/80 backdrop-blur-xl rounded-2xl p-6 border border-[#accf4c]/20 hover:shadow-2xl hover:shadow-[#accf4c]/20 transition-all duration-300 hover:border-[#accf4c]/40">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-semibold text-white">Revenue Over Time</h3>
+            <div className="bg-black/80 backdrop-blur-xl rounded-2xl p-4 sm:p-6 border border-[#accf4c]/20 hover:shadow-2xl hover:shadow-[#accf4c]/20 transition-all duration-300 hover:border-[#accf4c]/40">
+              <div className="flex items-center justify-between mb-3 sm:mb-4">
+                <h3 className="text-base sm:text-lg font-semibold text-white">Revenue Over Time</h3>
                 <div className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-[#accf4c] rounded-full animate-pulse"></div>
-                  <div className="text-sm text-gray-400">Live</div>
+                  <div className="text-xs sm:text-sm text-gray-400">Live</div>
                 </div>
               </div>
-              <div className="h-64">
+              <div className="h-48 sm:h-64">
                 <Line data={revenueData} options={chartOptions} />
               </div>
             </div>
 
             {/* Stake Growth */}
-            <div className="bg-black/80 backdrop-blur-xl rounded-2xl p-6 border border-[#accf4c]/20 hover:shadow-2xl hover:shadow-[#accf4c]/20 transition-all duration-300 hover:border-[#accf4c]/40">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-semibold text-white">Stake Growth</h3>
+            <div className="bg-black/80 backdrop-blur-xl rounded-2xl p-4 sm:p-6 border border-[#accf4c]/20 hover:shadow-2xl hover:shadow-[#accf4c]/20 transition-all duration-300 hover:border-[#accf4c]/40">
+              <div className="flex items-center justify-between mb-3 sm:mb-4">
+                <h3 className="text-base sm:text-lg font-semibold text-white">Stake Growth</h3>
                 <div className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-[#accf4c] rounded-full animate-pulse"></div>
-                  <div className="text-sm text-gray-400">Live</div>
+                  <div className="text-xs sm:text-sm text-gray-400">Live</div>
                 </div>
               </div>
-              <div className="h-64">
+              <div className="h-48 sm:h-64">
                 <Line data={stakeData} options={chartOptions} />
               </div>
             </div>
 
             {/* APY Over Time */}
-            <div className="bg-black/80 backdrop-blur-xl rounded-2xl p-6 border border-[#accf4c]/20 hover:shadow-2xl hover:shadow-[#accf4c]/20 transition-all duration-300 hover:border-[#accf4c]/40">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-semibold text-white">APY Over Time</h3>
+            <div className="bg-black/80 backdrop-blur-xl rounded-2xl p-4 sm:p-6 border border-[#accf4c]/20 hover:shadow-2xl hover:shadow-[#accf4c]/20 transition-all duration-300 hover:border-[#accf4c]/40">
+              <div className="flex items-center justify-between mb-3 sm:mb-4">
+                <h3 className="text-base sm:text-lg font-semibold text-white">APY Over Time</h3>
                 <div className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-[#accf4c] rounded-full animate-pulse"></div>
-                  <div className="text-sm text-gray-400">Live</div>
+                  <div className="text-xs sm:text-sm text-gray-400">Live</div>
                 </div>
               </div>
-              <div className="h-64">
+              <div className="h-48 sm:h-64">
                 <Line data={apyData} options={chartOptions} />
               </div>
             </div>
 
             {/* Vote Success Rate */}
-            <div className="bg-black/80 backdrop-blur-xl rounded-2xl p-6 border border-[#accf4c]/20 hover:shadow-2xl hover:shadow-[#accf4c]/20 transition-all duration-300 hover:border-[#accf4c]/40">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-semibold text-white">Vote Success Rate</h3>
+            <div className="bg-black/80 backdrop-blur-xl rounded-2xl p-4 sm:p-6 border border-[#accf4c]/20 hover:shadow-2xl hover:shadow-[#accf4c]/20 transition-all duration-300 hover:border-[#accf4c]/40">
+              <div className="flex items-center justify-between mb-3 sm:mb-4">
+                <h3 className="text-base sm:text-lg font-semibold text-white">Vote Success Rate</h3>
                 <div className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-[#accf4c] rounded-full animate-pulse"></div>
-                  <div className="text-sm text-gray-400">Live</div>
+                  <div className="text-xs sm:text-sm text-gray-400">Live</div>
                 </div>
               </div>
-              <div className="h-64">
+              <div className="h-48 sm:h-64">
                 <Line data={voteData} options={chartOptions} />
               </div>
             </div>
 
             {/* Revenue Breakdown */}
-            <div className="bg-black/80 backdrop-blur-xl rounded-2xl p-6 border border-[#accf4c]/20 hover:shadow-2xl hover:shadow-[#accf4c]/20 transition-all duration-300 hover:border-[#accf4c]/40">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-semibold text-white">Revenue Breakdown</h3>
+            <div className="bg-black/80 backdrop-blur-xl rounded-2xl p-4 sm:p-6 border border-[#accf4c]/20 hover:shadow-2xl hover:shadow-[#accf4c]/20 transition-all duration-300 hover:border-[#accf4c]/40">
+              <div className="flex items-center justify-between mb-3 sm:mb-4">
+                <h3 className="text-base sm:text-lg font-semibold text-white">Revenue Breakdown</h3>
                 <div className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-[#accf4c] rounded-full animate-pulse"></div>
-                  <div className="text-sm text-gray-400">Live</div>
+                  <div className="text-xs sm:text-sm text-gray-400">Live</div>
                 </div>
               </div>
-              <div className="h-64">
+              <div className="h-48 sm:h-64">
                 <Doughnut data={revenueBreakdownData} options={chartOptions} />
               </div>
             </div>
 
             {/* Skipped Slots */}
-            <div className="bg-black/80 backdrop-blur-xl rounded-2xl p-6 border border-[#accf4c]/20 hover:shadow-2xl hover:shadow-[#accf4c]/20 transition-all duration-300 hover:border-[#accf4c]/40">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-semibold text-white">Skipped Slots</h3>
+            <div className="bg-black/80 backdrop-blur-xl rounded-2xl p-4 sm:p-6 border border-[#accf4c]/20 hover:shadow-2xl hover:shadow-[#accf4c]/20 transition-all duration-300 hover:border-[#accf4c]/40">
+              <div className="flex items-center justify-between mb-3 sm:mb-4">
+                <h3 className="text-base sm:text-lg font-semibold text-white">Skipped Slots</h3>
                 <div className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-[#accf4c] rounded-full animate-pulse"></div>
-                  <div className="text-sm text-gray-400">Live</div>
+                  <div className="text-xs sm:text-sm text-gray-400">Live</div>
                 </div>
               </div>
-              <div className="h-64">
+              <div className="h-48 sm:h-64">
                 <Line data={skippedSlotsData} options={chartOptions} />
               </div>
             </div>
           </div>
 
           {/* SYSTEM PERFORMANCE */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
-            <div className="lg:col-span-1 bg-black/80 backdrop-blur-xl rounded-2xl p-6 border border-[#accf4c]/20 hover:shadow-2xl hover:shadow-[#accf4c]/20 transition-all duration-300 hover:border-[#accf4c]/40">
-              <h3 className="text-lg font-semibold mb-4 text-white">System Performance</h3>
-              <div className="space-y-4">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
+            <div className="lg:col-span-1 bg-black/80 backdrop-blur-xl rounded-2xl p-4 sm:p-6 border border-[#accf4c]/20 hover:shadow-2xl hover:shadow-[#accf4c]/20 transition-all duration-300 hover:border-[#accf4c]/40">
+              <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-white">System Performance</h3>
+              <div className="space-y-3 sm:space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-400">CPU Usage</span>
+                  <span className="text-xs sm:text-sm text-gray-400">CPU Usage</span>
                   <div className="flex items-center space-x-2">
-                    <div className="w-3 h-3 rounded-full bg-[#accf4c] shadow-lg shadow-[#accf4c]/50"></div>
-                    <span className="text-sm font-medium text-white">{cpuUsage}%</span>
+                    <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-[#accf4c] shadow-lg shadow-[#accf4c]/50"></div>
+                    <span className="text-xs sm:text-sm font-medium text-white">{cpuUsage}%</span>
                   </div>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-400">Memory Usage</span>
+                  <span className="text-xs sm:text-sm text-gray-400">Memory Usage</span>
                   <div className="flex items-center space-x-2">
-                    <div className="w-3 h-3 rounded-full bg-[#accf4c] shadow-lg shadow-[#accf4c]/50"></div>
-                    <span className="text-sm font-medium text-white">{memoryUsage}GB</span>
+                    <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-[#accf4c] shadow-lg shadow-[#accf4c]/50"></div>
+                    <span className="text-xs sm:text-sm font-medium text-white">{memoryUsage}GB</span>
                   </div>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-400">Network Latency</span>
+                  <span className="text-xs sm:text-sm text-gray-400">Network Latency</span>
                   <div className="flex items-center space-x-2">
-                    <div className="w-3 h-3 rounded-full bg-[#accf4c] shadow-lg shadow-[#accf4c]/50"></div>
-                    <span className="text-sm font-medium text-white">{networkLatency}ms</span>
+                    <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-[#accf4c] shadow-lg shadow-[#accf4c]/50"></div>
+                    <span className="text-xs sm:text-sm font-medium text-white">{networkLatency}ms</span>
                   </div>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-400">Skipped Slots</span>
+                  <span className="text-xs sm:text-sm text-gray-400">Skipped Slots</span>
                   <div className="flex items-center space-x-2">
-                    <div className="w-3 h-3 rounded-full bg-[#accf4c] shadow-lg shadow-[#accf4c]/50"></div>
-                    <span className="text-sm font-medium text-white">{skippedSlots}%</span>
+                    <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-[#accf4c] shadow-lg shadow-[#accf4c]/50"></div>
+                    <span className="text-xs sm:text-sm font-medium text-white">{skippedSlots}%</span>
                   </div>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-400">Total Delegations</span>
+                  <span className="text-xs sm:text-sm text-gray-400">Total Delegations</span>
                   <div className="flex items-center space-x-2">
-                    <div className="w-3 h-3 rounded-full bg-blue-500"></div>
-                    <span className="text-sm font-medium text-white">{totalDelegations}</span>
+                    <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-blue-500"></div>
+                    <span className="text-xs sm:text-sm font-medium text-white">{totalDelegations}</span>
                   </div>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-400">Epoch</span>
+                  <span className="text-xs sm:text-sm text-gray-400">Epoch</span>
                   <div className="flex items-center space-x-2">
-                    <div className="w-3 h-3 rounded-full bg-purple-500"></div>
-                    <span className="text-sm font-medium text-white">{epoch}</span>
+                    <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-purple-500"></div>
+                    <span className="text-xs sm:text-sm font-medium text-white">{epoch}</span>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* ENHANCED LOGS */}
-            <div className="lg:col-span-2 bg-black/80 backdrop-blur-xl rounded-2xl p-6 border border-[#accf4c]/20 hover:shadow-2xl hover:shadow-[#accf4c]/20 transition-all duration-300 hover:border-[#accf4c]/40">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-semibold text-white">Live Activity Log</h3>
+            <div className="lg:col-span-2 bg-black/80 backdrop-blur-xl rounded-2xl p-4 sm:p-6 border border-[#accf4c]/20 hover:shadow-2xl hover:shadow-[#accf4c]/20 transition-all duration-300 hover:border-[#accf4c]/40">
+              <div className="flex items-center justify-between mb-3 sm:mb-4">
+                <h3 className="text-base sm:text-lg font-semibold text-white">Live Activity Log</h3>
                 <div className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-[#accf4c] rounded-full animate-pulse shadow-lg shadow-[#accf4c]/50"></div>
-                  <span className="text-sm text-gray-400">Live</span>
+                  <span className="text-xs sm:text-sm text-gray-400">Live</span>
                 </div>
               </div>
-              <div className="h-64 overflow-y-auto space-y-2 scrollbar-thin scrollbar-thumb-[#accf4c]/30 scrollbar-track-gray-800">
+              <div className="h-48 sm:h-64 overflow-y-auto space-y-2 scrollbar-thin scrollbar-thumb-[#accf4c]/30 scrollbar-track-gray-800">
                 {logs.map((log, i) => (
-                  <div key={i} className="flex items-start space-x-3 p-3 bg-gray-800/50 rounded-lg hover:bg-gray-800/70 transition-colors">
-                    <div className="w-2 h-2 bg-[#accf4c] rounded-full mt-2 flex-shrink-0 shadow-lg shadow-[#accf4c]/50"></div>
+                  <div key={i} className="flex items-start space-x-2 sm:space-x-3 p-2 sm:p-3 bg-gray-800/50 rounded-lg hover:bg-gray-800/70 transition-colors">
+                    <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#accf4c] rounded-full mt-1.5 sm:mt-2 flex-shrink-0 shadow-lg shadow-[#accf4c]/50"></div>
                     <div className="flex-1">
-                      <div className="text-sm text-gray-300">{log}</div>
+                      <div className="text-xs sm:text-sm text-gray-300 break-words">{log}</div>
                     </div>
                   </div>
                 ))}
@@ -706,24 +706,24 @@ export default function Home() {
           </div>
 
           {/* INCIDENT TIMELINE - Nice to Have */}
-          <div className="bg-black/80 backdrop-blur-xl rounded-2xl p-6 border border-orange-500/20 hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-300 hover:border-orange-500/40 mb-8">
-            <h3 className="text-lg font-semibold mb-4 text-white flex items-center">
-              Incident Timeline & Root Cause Analysis
-              <span className="ml-2 px-2 py-1 bg-orange-500/20 text-orange-300 text-xs rounded-full">AUTO-CORRELATED</span>
+          <div className="bg-black/80 backdrop-blur-xl rounded-2xl p-4 sm:p-6 border border-orange-500/20 hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-300 hover:border-orange-500/40 mb-6 sm:mb-8">
+            <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-white flex flex-col sm:flex-row sm:items-center">
+              <span>Incident Timeline & Root Cause Analysis</span>
+              <span className="ml-0 sm:ml-2 mt-1 sm:mt-0 px-2 py-1 bg-orange-500/20 text-orange-300 text-xs rounded-full w-fit">AUTO-CORRELATED</span>
             </h3>
-            <div className="space-y-4">
+            <div className="space-y-3 sm:space-y-4">
               {incidentTimeline.map((incident) => (
-                <div key={incident.id} className="flex items-start space-x-4 p-4 bg-gray-800/50 rounded-lg border-l-4 border-orange-500">
+                <div key={incident.id} className="flex items-start space-x-3 sm:space-x-4 p-3 sm:p-4 bg-gray-800/50 rounded-lg border-l-4 border-orange-500">
                   <div className="flex-shrink-0">
-                    <div className={`w-3 h-3 rounded-full mt-2 ${
+                    <div className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full mt-1.5 sm:mt-2 ${
                       incident.severity === 'success' ? 'bg-green-500' :
                       incident.severity === 'warning' ? 'bg-yellow-500' :
                       'bg-blue-500'
                     }`}></div>
                   </div>
-                  <div className="flex-1">
-                    <div className="flex items-center justify-between">
-                      <h4 className="text-sm font-medium text-white">{incident.title}</h4>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-1 sm:space-y-0">
+                      <h4 className="text-xs sm:text-sm font-medium text-white truncate">{incident.title}</h4>
                       <span className="text-xs text-gray-400">
                         {incident.timestamp.toLocaleTimeString('en-US', { 
                           hour12: false, 
@@ -733,11 +733,11 @@ export default function Home() {
                         })}
                       </span>
                     </div>
-                    <p className="text-sm text-gray-300 mt-1">{incident.description}</p>
+                    <p className="text-xs sm:text-sm text-gray-300 mt-1 break-words">{incident.description}</p>
                     {incident.relatedEvents.length > 0 && (
-                      <div className="mt-2 flex items-center space-x-2">
+                      <div className="mt-2 flex flex-col sm:flex-row sm:items-center space-y-1 sm:space-y-0 sm:space-x-2">
                         <span className="text-xs text-orange-300">🔗 Related:</span>
-                        <span className="text-xs text-gray-400">{incident.relatedEvents.join(', ')}</span>
+                        <span className="text-xs text-gray-400 break-words">{incident.relatedEvents.join(', ')}</span>
                       </div>
                     )}
                   </div>
@@ -747,34 +747,34 @@ export default function Home() {
           </div>
 
           {/* COMMUNITY PORTAL PREVIEW - Nice to Have */}
-          <div className="bg-gradient-to-r from-blue-900/20 to-purple-900/20 backdrop-blur-xl rounded-2xl p-6 border border-blue-500/20 hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300 hover:border-blue-500/40 mb-8">
-            <div className="flex items-center justify-between mb-6">
-              <h3 className="text-lg font-semibold text-white">
+          <div className="bg-gradient-to-r from-blue-900/20 to-purple-900/20 backdrop-blur-xl rounded-2xl p-4 sm:p-6 border border-blue-500/20 hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300 hover:border-blue-500/40 mb-6 sm:mb-8">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 sm:mb-6 space-y-3 sm:space-y-0">
+              <h3 className="text-base sm:text-lg font-semibold text-white">
                 Community Portal Preview
               </h3>
               <a 
                 href="/community" 
-                className="px-3 py-1 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium"
+                className="px-3 py-1 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-xs sm:text-sm font-medium w-fit"
               >
                 View Full Portal
               </a>
             </div>
             
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6">
               {/* Primary Metrics */}
               <div>
-                <h4 className="text-sm font-medium text-blue-300 mb-4">Primary Performance Metrics</h4>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div className="bg-black/40 rounded-xl p-4 text-center border border-blue-500/30">
-                    <div className="text-2xl font-bold text-blue-400 mb-1">{publicMetrics.uptime}%</div>
+                <h4 className="text-xs sm:text-sm font-medium text-blue-300 mb-3 sm:mb-4">Primary Performance Metrics</h4>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+                  <div className="bg-black/40 rounded-xl p-3 sm:p-4 text-center border border-blue-500/30">
+                    <div className="text-xl sm:text-2xl font-bold text-blue-400 mb-1">{publicMetrics.uptime}%</div>
                     <div className="text-xs text-gray-400">Uptime (30D)</div>
                   </div>
-                  <div className="bg-black/40 rounded-xl p-4 text-center border border-green-500/30">
-                    <div className="text-2xl font-bold text-green-400 mb-1">{publicMetrics.apy}%</div>
+                  <div className="bg-black/40 rounded-xl p-3 sm:p-4 text-center border border-green-500/30">
+                    <div className="text-xl sm:text-2xl font-bold text-green-400 mb-1">{publicMetrics.apy}%</div>
                     <div className="text-xs text-gray-400">Current APY</div>
                   </div>
-                  <div className="bg-black/40 rounded-xl p-4 text-center border border-purple-500/30">
-                    <div className="text-2xl font-bold text-purple-400 mb-1">{publicMetrics.reliability}%</div>
+                  <div className="bg-black/40 rounded-xl p-3 sm:p-4 text-center border border-purple-500/30">
+                    <div className="text-xl sm:text-2xl font-bold text-purple-400 mb-1">{publicMetrics.reliability}%</div>
                     <div className="text-xs text-gray-400">Reliability Score</div>
                   </div>
                 </div>
@@ -782,30 +782,30 @@ export default function Home() {
 
               {/* Secondary Metrics */}
               <div>
-                <h4 className="text-sm font-medium text-blue-300 mb-4">Validator Health Metrics</h4>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  <div className="bg-black/40 rounded-lg p-3 text-center border border-gray-600/30">
-                    <div className="text-lg font-bold text-white mb-1">{formatNumber(publicMetrics.totalStake)}</div>
+                <h4 className="text-xs sm:text-sm font-medium text-blue-300 mb-3 sm:mb-4">Validator Health Metrics</h4>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+                  <div className="bg-black/40 rounded-lg p-2 sm:p-3 text-center border border-gray-600/30">
+                    <div className="text-sm sm:text-lg font-bold text-white mb-1">{formatNumber(publicMetrics.totalStake)}</div>
                     <div className="text-xs text-gray-400">Total Stake</div>
                   </div>
-                  <div className="bg-black/40 rounded-lg p-3 text-center border border-gray-600/30">
-                    <div className="text-lg font-bold text-white mb-1">{publicMetrics.delegatorCount}</div>
+                  <div className="bg-black/40 rounded-lg p-2 sm:p-3 text-center border border-gray-600/30">
+                    <div className="text-sm sm:text-lg font-bold text-white mb-1">{publicMetrics.delegatorCount}</div>
                     <div className="text-xs text-gray-400">Delegators</div>
                   </div>
-                  <div className="bg-black/40 rounded-lg p-3 text-center border border-gray-600/30">
-                    <div className="text-lg font-bold text-green-400 mb-1">99.9%</div>
+                  <div className="bg-black/40 rounded-lg p-2 sm:p-3 text-center border border-gray-600/30">
+                    <div className="text-sm sm:text-lg font-bold text-green-400 mb-1">99.9%</div>
                     <div className="text-xs text-gray-400">Vote Success</div>
                   </div>
-                  <div className="bg-black/40 rounded-lg p-3 text-center border border-gray-600/30">
-                    <div className="text-lg font-bold text-red-400 mb-1">0.1%</div>
+                  <div className="bg-black/40 rounded-lg p-2 sm:p-3 text-center border border-gray-600/30">
+                    <div className="text-sm sm:text-lg font-bold text-red-400 mb-1">0.1%</div>
                     <div className="text-xs text-gray-400">Skipped Slots</div>
                   </div>
                 </div>
               </div>
 
               {/* Trust Indicators */}
-              <div className="bg-black/30 rounded-lg p-4 border border-blue-500/20">
-                <h4 className="text-sm font-medium text-blue-300 mb-3">Trust & Transparency</h4>
+              <div className="bg-black/30 rounded-lg p-3 sm:p-4 border border-blue-500/20">
+                <h4 className="text-xs sm:text-sm font-medium text-blue-300 mb-2 sm:mb-3">Trust & Transparency</h4>
                 <div className="flex flex-wrap gap-2">
                   <span className="px-2 py-1 bg-green-500/20 text-green-300 text-xs rounded-full border border-green-500/30">
                     ✓ Real-time Data
